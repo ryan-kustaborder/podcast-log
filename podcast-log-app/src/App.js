@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CumulativeTime from "./Charts/CumulativeTime";
+import MinutesPerPodcast from "./Charts/MinutesPerPodcast";
+import TotalTimeListened from "./Charts/TotalTimeListened";
+
+import records from "./records.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is not the default react app
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1>Podcast Log</h1>
       </header>
-    </div>
+      <div id="dashboard">
+        <div id="dashboard-left">
+        <CumulativeTime inputData={records["data"]} />
+
+        </div>
+        <div id="dashboard-right">
+
+        <TotalTimeListened inputData={records["data"]} />
+        <MinutesPerPodcast inputData={records["data"]} />
+        </div>
+      </div>
+    </>
   );
 }
 

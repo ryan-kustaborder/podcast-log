@@ -8,7 +8,7 @@ fetch("http://localhost:8000/")
         const content = { data: payload };
         const json = JSON.stringify(content);
 
-        fs.writeFile("../podcast-log-app/src/test.json", json, (err) => {
+        fs.writeFile("../podcast-log-app/src/records.json", json, (err) => {
             if (err) {
                 console.error(err);
             }
