@@ -41,26 +41,34 @@ export function GetColors(podcasts) {
   return colors;
 }
 
-export function SortNumericalDict(dict) {
+export function SortNumericalDict(dict, reverse = false) {
   var items = Object.keys(dict).map((key) => {
     return [key, dict[key]];
   });
 
   let obj = {};
 
-  items
-    .sort((first, second) => {
+  let sortedItems;
+
+  if (!reverse) {
+    sortedItems = items.sort((first, second) => {
       return second[1] - first[1];
-    })
+    });
+  } else {
+    sortedItems = items.sort((first, second) => {
+      return first[1] - second[1];
+    });
+  }
+
+  sortedItems
     .map((e) => {
       return e[0];
     })
     .forEach((k, i) => {
       obj[k] = items[i][1];
     });
+
   return obj;
 }
 
-export function SortDataByDate(dict) {
-  
-}
+export function SortDataByDate(dict) {}

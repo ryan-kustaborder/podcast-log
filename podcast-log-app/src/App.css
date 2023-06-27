@@ -2,7 +2,7 @@
 * {
   --app-background: #171719;
   --dashboard-background: #212127;
-  --stroke-gray: #3A3A43;
+  --stroke-gray: #3a3a43;
 
   /* Numerical Values */
   --header-height: 64px;
@@ -70,7 +70,6 @@ header {
   max-height: 400px;
 }
 
-
 /* Total Time Listened */
 #TotalTimeListened-value {
   width: 100%;
@@ -84,4 +83,24 @@ header {
   text-align: center;
   font-size: 32 px;
   margin-bottom: 24px;
+}
+
+/* Per Podcast Statistics */
+#PerPodcastStatistics {
+  flex-grow: 2;
+}
+
+#Treemap-container {
+  width: 100%;
+  height: 500px;
+}
+
+#Treemap {
+  width: 100%;
+  height: 100%;
+}
+
+#Treemap rect {
+  stroke: var(--dashboard-background);
+  stroke-width: 4px;
 }
